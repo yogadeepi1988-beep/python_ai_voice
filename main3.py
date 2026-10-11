@@ -18,6 +18,7 @@ def get_audio():
         try:
             command = r.recognize_google(audio)
             print(f"You said:{command}")
+            return command.lower()
         except sr.UnknownValueError:
             print("could not understand.")
         except sr.RequestError as e:
